@@ -125,7 +125,7 @@ input#word {
   right: 85px;
 }
 
-#insertchars>span {
+#insertchars > span {
   width: 38px;
   height: 38px;
   margin: 0 5px;
@@ -140,8 +140,8 @@ input#word {
   cursor: pointer;
 }
 
-.notouch #insertchars>span:hover,
-.touch #insertchars>span:focus {
+.notouch #insertchars > span:hover,
+.touch #insertchars > span:focus {
   background: #f6f6f6;
   color: #aaa;
   border-color: #aaa;
