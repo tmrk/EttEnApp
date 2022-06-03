@@ -1,106 +1,20 @@
 import './App.scss';
-import lexin from './assets/lexin';
+import { ReactComponent as Logo } from './assets/ettapp-logo.svg';
 import { ReactComponent as SvgCC } from './assets/cc.svg';
 import { ReactComponent as SvgCCby } from './assets/cc-by.svg';
 import { ReactComponent as SvgCCsa } from './assets/cc-sa.svg';
 import { useState, useEffect } from 'react';
 
-const Search = (props) => {
-
-  const handleInput = (e) => {
-    const input = e.target.value;
-    props.setSearch(input);
-    const matches = [];
-    if (input) for (let i = 0; i < lexin.words.length; i++) {
-      const wordForm = lexin.words[i].form.toLowerCase().replace(/[0-9,~, ]/g, '');
-      if (wordForm.startsWith(input.toLowerCase())) matches.push(lexin.words[i]);
-    }
-    props.setFiltered(matches);
-    const firstWord = matches[0];
-    if (firstWord) {
-      props.setSelected(firstWord);
-      props.setResult(firstWord);
-    }
-  }
-
-  const clearSearch = () => props.setSearch('');
-
-  return (
-    <div id='search'>
-      <input 
-        id='word' type='text' 
-        placeholder='Type a word to look up' 
-        onChange={ handleInput } 
-        value={ props.search } 
-        autoFocus='autofocus'
-        autoComplete='false'
-      />
-      <span id='clear' title='Clear search (esc)' onClick={ clearSearch }></span>
-    </div>
-  );
-
-}
-
-const FilteredWord = (props) => {
-  const showWord = () => {
-    props.setResult(props.word);
-    props.setSelected(props.word);
-  };
-  return (
-    <li 
-      className={ props.word === props.selected ? 'selected' : '' }
-      onClick={ showWord }
-    >
-      { props.word.form.replace(/[0-9,~, ]/g, '') }
-    </li>
-  );
-}
-
-const Filtered = (props) => {
-  return (
-    <ul id='filtered'>
-      {(props.filtered.length) ? 
-        props.filtered.map((word, index) => (
-          <FilteredWord 
-            key={index} 
-            word={word}
-            setResult={props.setResult}
-            setSelected={props.setSelected}
-            selected={props.selected}
-          />
-        )
-      ) : ''}
-    </ul>
-  );
-}
-
-const Word = ({ word }) => {
-  return (
-    <div className='word'>
-      <span className='row1'>
-        <h1>{ word.form }</h1>
-      </span>
-      <span className='row2'>
-        {JSON.stringify(word, 2, 2)}
-      </span>
-    </div>
-  );
-}
-
-const Result = ({ result }) => {
-  return (
-    <div id='result'>
-      {result ? <Word word={ result } /> : ''}
-    </div>
-  );
-}
+import Search from './components/Search';
+import Filtered from './components/Filtered';
+import Result from './components/Result';
 
 function App() {
+
   const [search, setSearch] = useState('');
   const [filtered, setFiltered] = useState([]);
   const [result, setResult] = useState({});
   const [selected, setSelected] = useState({});
-
 
   const handleKeydown = (event) => {
     if (['ArrowDown', 'ArrowUp', 'Escape'].includes(event.key)) {
@@ -150,7 +64,10 @@ function App() {
   return (
     <div id='wrapper' className={ search ? 'on notouch' : 'notouch' }>
       <header>
-        <h1>EttApp</h1>
+        <div id="logo">
+          <Logo />
+        </div>
+        <h1>Quick Swedish Wordbook</h1>
       </header>
       <Search 
         search={search} 
@@ -169,6 +86,7 @@ function App() {
         />
         <Result 
           result={ result } 
+          setSearch={setSearch}
         />
       </div>
       <footer>
@@ -177,10 +95,11 @@ function App() {
           <SvgCCby />
           <SvgCCsa />
         </a>
-        <span>Quick Swedish Wordbook v2 (2022) is based on <a href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a></span>
+        <span>EttApp (2022) is based on <a href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a></span>
       </footer>
     </div>
   );
+
 }
 
 export default App;

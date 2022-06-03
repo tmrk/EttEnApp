@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +19,7 @@ html, body {
 
 body {
   background: #eee;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -42,80 +44,104 @@ a {
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
-}
 
-header {
-  height: 100px;
+  & > header {
+    height: 100px;
+  
+    #logo {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    svg {
+      width: 120px;
+    }
+  
+    h1 {
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
 
-  h1 {
-    text-transform: uppercase;
-    font-size: 1.8rem;
+  }
+  
+  & > header,
+  & > footer {
+    width: 100%;
+    height: 150px;
+    color: #ccc;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  & > footer {
+    font-size: 0.8rem;
+  }
+
+  & > footer span {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  & > footer a svg {
+    margin: 0 2px;
+    display: inline-block;
+  }
+  
+  & > footer a svg path {
+    fill: #ccc;
+  }
+
+  &.on,
+  &.on #clear {
+    display: block;
+  }
+
+  &.on > #main {
+    display: flex;
+  }
+
+  &.on > header,
+  &.on > footer {
+    display: none;
+  }
+
+  #search {
+    width: 100%;
+    position: relative;
+  }
+
+  input#word {
+    width: calc(100% - 200px);
+    height: 40px;
+    padding: 20px 180px 20px 20px;
+    border: none;
+    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+  
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+  
+  &.on #word {
+    width: calc(100% - 265px);
+    padding-right: 245px;
   }
 
 }
 
-footer {
-  height: 100px;
-}
-
-header,
-footer {
-  width: 100%;
-  height: 150px;
-  color: #ccc;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-footer {
-  font-size: 0.8rem;
-}
-
-footer span {
-  width: 100%;
-  margin-top: 10px;
-}
-
-footer a svg {
-  margin: 0 2px;
-  display: inline-block;
-}
-
-footer a svg path {
-  fill: #ccc;
-}
-
-.notouch #footer a:hover svg path,
-.touch #footer a:focus svg path {
+.notouch footer a:hover svg path,
+.touch #ooter a:focus svg path {
   fill: #aaa;
-}
-
-#search {
-  width: 100%;
-  position: relative;
-}
-
-input#word {
-  width: calc(100% - 200px);
-  height: 40px;
-  padding: 20px 180px 20px 20px;
-  border: none;
-  background: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 2rem;
-}
-
-#word::placeholder {
-  color: #ccc;
-}
-
-#wrapper.on #word {
-  width: calc(100% - 265px);
-  padding-right: 245px;
 }
 
 #insertchars {
@@ -173,151 +199,172 @@ input#word {
   height: calc(100% - 80px);
   background: #f6f6f6;
   display: none;
-}
 
-#main.noresult #filtered,
-#main.noresult #result {
-  display: none;
-}
+  &.noresult #filtered,
+  &.noresult #result {
+    display: none;
+  }
 
-#main.noresult::after {
-  width: 100%;
-  padding: 80px 0;
-  content: 'No entries found.';
-  text-align: center;
-  display: block;
-  font-size: 3rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: rgba(0,0,0,0.1);
-}
+  &.noresult::after {
+    width: 100%;
+    padding: 80px 0;
+    content: 'No entries found.';
+    text-align: center;
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: rgba(0,0,0,0.1);
+  }
 
-#wrapper.on {
-  display: block;
-}
+  #filtered {
+    width: 200px;
+    height: 100%;
+    background: #e6e6e6;
+    display: block;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  
+    li {
+      padding: 10px 20px;
+      word-break: break-all;
+      cursor: pointer;
+    }
+  
+    li.selected {
+      background: #d3d3d3;
+    }
+  
+    .notouch & li:hover,
+    .touch & li:active {
+      background: #ddd;
+    }
+  
+  }
+  
+  #result {
+    width: calc(100% - 200px);
+    height: 100%;
+    position: relative;
+    display: block;
+    float: left;
+    line-height: 1.2rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  
+    pre {
+      width: 100%;
+      overflow: hidden;
+    }
 
-#wrapper.on #main,
-#wrapper.on #clear {
-  display: block;
-}
+    .word {
+      padding: 20px;
+    
+      header {
+        width: 100%;
+        display: flex;
 
-#wrapper.on header,
-#wrapper.on footer {
-display: none;
-}
+        h1 {
+          min-height: 48px;
+          font-weight: 800;
+          line-height: 1.1em;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          word-break: break-all;
+          hyphens: auto;
+        }
+        
+        h1 sup {
+          font-weight: normal;
+        }
 
-#filtered {
-width: 200px;
-height: 100%;
-background: #e6e6e6;
-display: block;
-float: left;
-overflow-y: auto;
--webkit-overflow-scrolling: touch;
-}
+        .article > span {
+          height: 44px;
+          padding: 0 10px;
+          border: 2px solid #000;
+          border-radius: 10px;
+          font-size: 2rem;
+          font-weight: bold;
+          line-height: 2rem;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    
+    .pronunciation {
+      margin-bottom: 10px;
+      color: #bbb;
+    
+      &::before { content: '|\00a0\00a0'; }
+      &::after  { content: '\00a0\00a0|'; }
+    }
+    
+    .pos {
+      margin-bottom: 10px;
+      display: inline-block;
+    }
 
-#filtered li {
-padding: 10px 20px;
-word-break: break-all;
-cursor: pointer;
-}
+    .link {
+      text-decoration: underline;
+      cursor: pointer;
+    }
 
-.notouch #filtered li:hover,
-.touch #filtered li:active {
-background: #ddd;
-}
+    .link:hover {
+      text-decoration: none;
+    }
+    
+    .inflection {
+      margin-bottom: 10px;
+      margin-left: 10px;
+      display: inline-block;
+      color: #666;
+      font-style: italic;
+      letter-spacing: 0.2px;
 
-#filtered li.selected {
-background: #d3d3d3;
-}
+      &::before { content: '('; }
+      &::after  { content: ')'; }
+    }
 
-#result {
-width: calc(100% - 200px);
-height: 100%;
-position: relative;
-display: block;
-float: left;
-line-height: 1.2rem;
-overflow-y: auto;
--webkit-overflow-scrolling: touch;
-}
+    .definition {
+      margin-bottom: 10px;
+    }
 
-#result .word {
-padding: 20px;
-}
-
-#result h1 {
-display: inline-block;
-line-height: 1.1em;
-}
-
-#result h1 sup {
-font-weight: normal;
-}
-
-#result .word>span {
-display: block;
-position: relative;
-}
-
-#result .article {
-padding: 5px 10px;
-border: 1px solid #000;
-border-radius: 10px;
-font-size: 2rem;
-font-weight: bold;
-line-height: 2rem;
-position: absolute;
-top: 0;
-right: 0;
-display: block;
-}
-
-#result .pronunciation {
-margin-left: 14px;
-color: #666;
-display: inline-block;
-}
-
-#result .pos {
-margin-top: 10px;
-display: block;
-display: inline-block;
-}
-
-#result .inflection {
-display: inline-block;
-}
-
-#result .usage {
-margin-top: 10px;
-display: block;
-}
-
-#result .example {
-margin-top: 10px;
-font-size: 0.9rem;
-font-style: italic;
-display: block;
-}
-
-#result .valency,
-#result .grammat_comm {
-display: none;
-}
-
-#result .lexeme p {
-margin-top: 10px;
-}
-
-.clr {
-clear: both;
+    .compound {
+      margin-bottom: 10px;
+    }
+    
+    .usage {
+      margin-top: 10px;
+      display: block;
+    }
+    
+    .example {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-style: italic;
+      display: block;
+    }
+    
+    .valency,
+    .grammat_comm {
+      display: none;
+    }
+    
+    .lexeme p {
+      margin-top: 10px;
+    }
+  
+  }
 }
 
 #loading {
-position: fixed;
-top: 50%;
-left: 50%;
-margin-top: -100px;
-margin-left: -100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
 }
