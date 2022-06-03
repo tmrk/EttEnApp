@@ -15,7 +15,11 @@ const Pos = (props) => {
   let formattedPos;
   if (pos) {
     if (pos.substr(0,3) === 'se ') {
-      const linkedWordForm = pos.substr(3);
+      let linkedWordForm = pos.substr(3);
+      ['pron.', 'subst.', 'verb', 'adj.'].forEach(str => {
+        if (linkedWordForm.endsWith(' ' + str)) linkedWordForm = linkedWordForm.slice(0, -(str.length + 1))
+      });
+
       const handleClick = () => {
         props.setSearch(linkedWordForm);
       };

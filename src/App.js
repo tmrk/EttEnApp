@@ -29,7 +29,7 @@ function App() {
             if (nextWord) {
               setSelected(nextWord);
               setResult(nextWord);
-              if (liSelected.nextSibling.getBoundingClientRect().bottom - ulFiltered.getBoundingClientRect().height - 80 >= 0) ulFiltered.scrollTop = liSelected.nextSibling.offsetTop - ulFiltered.getBoundingClientRect().height - liSelected.nextSibling.getBoundingClientRect().height - 7;
+              if (liSelected.nextSibling.getBoundingClientRect().bottom - ulFiltered.getBoundingClientRect().height - 80 >= 0) ulFiltered.scrollTop = liSelected.nextSibling.offsetTop - ulFiltered.getBoundingClientRect().height - liSelected.nextSibling.getBoundingClientRect().height + 4;
             }
           }
           break;

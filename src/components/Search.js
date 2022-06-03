@@ -15,10 +15,15 @@ const Search = (props) => {
     if (firstWord) {
       props.setSelected(firstWord);
       props.setResult(firstWord);
+      document.getElementById('filtered').scrollTop = 0;
     }
   }
 
-  const clearSearch = () => props.setSearch('');
+  const clearSearch = () => {
+    props.setSearch('');
+    document.getElementById('word').focus();
+    document.getElementById('word').select();
+  }
 
   return (
     <div id='search'>
@@ -28,7 +33,10 @@ const Search = (props) => {
         onChange={ handleChange } 
         value={ props.search } 
         autoFocus='autofocus'
-        autoComplete='false'
+        autoComplete='off'
+        autoCorrect='off'
+        autoCapitalize='off'
+        spellCheck='false'
       />
       <span id='clear' title='Clear search (esc)' onClick={ clearSearch }></span>
     </div>
