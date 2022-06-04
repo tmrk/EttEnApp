@@ -22,6 +22,7 @@ const Pos = (props) => {
 
       const handleClick = () => {
         props.setSearch(linkedWordForm);
+        //document.getElementById('word').dispatchEvent(new Event('input', { 'bubbles': true }))
       };
       formattedPos = (
         <>

@@ -67,7 +67,7 @@ function App() {
         <div id="logo">
           <Logo />
         </div>
-        <h1>Quick Swedish Wordbook</h1>
+        <h1>Quick <br />Swedish <br />Wordbook</h1>
       </header>
       <Search 
         search={search} 

@@ -8,7 +8,7 @@ const Search = (props) => {
     const matches = [];
     if (input) for (let i = 0; i < lexin.words.length; i++) {
       const wordForm = lexin.words[i].form.toLowerCase().replace(/[0-9,~, ]/g, '');
-      if (wordForm.startsWith(input.toLowerCase().replace(/[0-9,~, ]/g, ''))) matches.push(lexin.words[i]);
+      if (wordForm.startsWith(input.toLowerCase().replace(/[~, ]/g, ''))) matches.push(lexin.words[i]);
     }
     props.setFiltered(matches);
     const firstWord = matches[0];
