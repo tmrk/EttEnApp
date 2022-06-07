@@ -22,6 +22,10 @@ const Pos = (props) => {
 
       const handleClick = () => {
         props.setSearch(linkedWordForm);
+        document.getElementById('word').focus();
+        document.getElementById('word').select();
+        //props.setSelected(firstWord);
+        //props.setResult(firstWord);
         //document.getElementById('word').dispatchEvent(new Event('input', { 'bubbles': true }))
       };
       formattedPos = (
@@ -72,10 +76,6 @@ const Word = (props) => {
           {word.lexeme.compound}
         </div> : ''}
 
-
-      <pre>
-        {JSON.stringify(word, 2, 2)}
-      </pre>
     </div> : ''
   );
 

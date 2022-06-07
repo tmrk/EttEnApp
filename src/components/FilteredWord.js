@@ -16,4 +16,4 @@ const FilteredWord = (props) => {
 
 }
 
-  export default FilteredWord;
+export default FilteredWord;

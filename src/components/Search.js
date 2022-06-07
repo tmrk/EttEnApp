@@ -2,13 +2,33 @@ import lexin from '../assets/lexin';
 
 const Search = (props) => {
 
+  // Idea via https://stackoverflow.com/a/15886205/4593394
+  const normalise = (str) => {
+    return str.replace(
+      /([ ~1234567890])|([àáâã])|([çčć])|([èéêë])|([ìíîï])|([ñ])|([òóôõø])|([ß])|([ùúûü])|([ÿ])|([æ])/g, 
+      function (str, extrachars, a, c, e, i, n, o, s, u, y, ae) {
+        if (extrachars) return '';
+        if (a) return 'a';
+        if (c) return 'c';
+        if (e) return 'e';
+        if (i) return 'i';
+        if (n) return 'n';
+        if (o) return 'o';
+        if (s) return 's';
+        if (u) return 'u';
+        if (y) return 'y';
+        if (ae) return 'ae';
+      }
+    );
+  }
+
   const handleChange = (e) => {
     const input = e.target.value;
     props.setSearch(input);
     const matches = [];
     if (input) for (let i = 0; i < lexin.words.length; i++) {
-      const wordForm = lexin.words[i].form.toLowerCase().replace(/[0-9,~, ]/g, '');
-      if (wordForm.startsWith(input.toLowerCase().replace(/[~, ]/g, ''))) matches.push(lexin.words[i]);
+      const wordForm = lexin.words[i].form.toLowerCase();
+      if (normalise(wordForm).startsWith(input.toLowerCase())) matches.push(lexin.words[i]);
     }
     props.setFiltered(matches);
     const firstWord = matches[0];

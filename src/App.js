@@ -1,13 +1,9 @@
 import './App.scss';
-import { ReactComponent as Logo } from './assets/ettapp-logo.svg';
-import { ReactComponent as SvgCC } from './assets/cc.svg';
-import { ReactComponent as SvgCCby } from './assets/cc-by.svg';
-import { ReactComponent as SvgCCsa } from './assets/cc-sa.svg';
 import { useState, useEffect } from 'react';
-
 import Search from './components/Search';
 import Filtered from './components/Filtered';
 import Result from './components/Result';
+import { Header, Footer } from './components/Layout';
 
 function App() {
 
@@ -63,12 +59,7 @@ function App() {
 
   return (
     <div id='wrapper' className={ search ? 'on notouch' : 'notouch' }>
-      <header>
-        <div id="logo">
-          <Logo />
-        </div>
-        <h1>Quick <br />Swedish <br />Wordbook</h1>
-      </header>
+      <Header />
       <Search 
         search={search} 
         setSearch={setSearch}
@@ -89,14 +80,7 @@ function App() {
           setSearch={setSearch}
         />
       </div>
-      <footer>
-        <a id="cclicense" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons License BY-SA 4.0">
-          <SvgCC />
-          <SvgCCby />
-          <SvgCCsa />
-        </a>
-        <span>EttApp (2022) is based on <a href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a></span>
-      </footer>
+      <Footer />
     </div>
   );
 

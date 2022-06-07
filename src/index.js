@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+//import RemapDictionary from './components/RemapDictionary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>
+    //<RemapDictionary /> // this was used to create the JSON database to use
     <App />
   //</React.StrictMode>
 );
