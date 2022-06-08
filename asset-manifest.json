@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/EttApp/static/css/main.54898376.css",
-    "main.js": "/EttApp/static/js/main.841612ac.js",
+    "main.js": "/EttApp/static/js/main.2e58139d.js",
     "static/js/787.98bd0e2b.chunk.js": "/EttApp/static/js/787.98bd0e2b.chunk.js",
     "static/media/ettapp-logo.svg": "/EttApp/static/media/ettapp-logo.1b394d2af055f091daa8e794256e7171.svg",
     "static/media/cc.svg": "/EttApp/static/media/cc.ed005e0a36856f26e745e70ace34af27.svg",
@@ -9,11 +9,11 @@
     "static/media/cc-by.svg": "/EttApp/static/media/cc-by.335d8731d66ebc30edb7093b856c5a36.svg",
     "index.html": "/EttApp/index.html",
     "main.54898376.css.map": "/EttApp/static/css/main.54898376.css.map",
-    "main.841612ac.js.map": "/EttApp/static/js/main.841612ac.js.map",
+    "main.2e58139d.js.map": "/EttApp/static/js/main.2e58139d.js.map",
     "787.98bd0e2b.chunk.js.map": "/EttApp/static/js/787.98bd0e2b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.54898376.css",
-    "static/js/main.841612ac.js"
+    "static/js/main.2e58139d.js"
   ]
 }
