@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/EttApp/static/css/main.4ecdd89d.css",
-    "main.js": "/EttApp/static/js/main.0395cb08.js",
+    "main.css": "/EttApp/static/css/main.54898376.css",
+    "main.js": "/EttApp/static/js/main.841612ac.js",
     "static/js/787.98bd0e2b.chunk.js": "/EttApp/static/js/787.98bd0e2b.chunk.js",
-    "static/media/ettapp-logo.svg": "/EttApp/static/media/ettapp-logo.3a77cbce8c0f541ba6ba5d5e7f1087c5.svg",
-    "static/media/cc.svg": "/EttApp/static/media/cc.2df9fb7d2ed2308b5c5d7d9e4f3386f2.svg",
-    "static/media/cc-sa.svg": "/EttApp/static/media/cc-sa.28c50e5a7656b57b477a3dc790f61514.svg",
-    "static/media/cc-by.svg": "/EttApp/static/media/cc-by.e1fc189d6ca58561030b02b1878e117d.svg",
+    "static/media/ettapp-logo.svg": "/EttApp/static/media/ettapp-logo.1b394d2af055f091daa8e794256e7171.svg",
+    "static/media/cc.svg": "/EttApp/static/media/cc.ed005e0a36856f26e745e70ace34af27.svg",
+    "static/media/cc-sa.svg": "/EttApp/static/media/cc-sa.28565e15f12fc1d5548bd01e1c6056a7.svg",
+    "static/media/cc-by.svg": "/EttApp/static/media/cc-by.335d8731d66ebc30edb7093b856c5a36.svg",
     "index.html": "/EttApp/index.html",
-    "main.4ecdd89d.css.map": "/EttApp/static/css/main.4ecdd89d.css.map",
-    "main.0395cb08.js.map": "/EttApp/static/js/main.0395cb08.js.map",
+    "main.54898376.css.map": "/EttApp/static/css/main.54898376.css.map",
+    "main.841612ac.js.map": "/EttApp/static/js/main.841612ac.js.map",
     "787.98bd0e2b.chunk.js.map": "/EttApp/static/js/787.98bd0e2b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ecdd89d.css",
-    "static/js/main.0395cb08.js"
+    "static/css/main.54898376.css",
+    "static/js/main.841612ac.js"
   ]
 }
