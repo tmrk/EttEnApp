@@ -40,15 +40,68 @@ const Pos = (props) => {
   } else return;
 };
 
+const Lex = ({ lex }) => {
+  return (
+    <div className='lex'>
+
+      {lex.definition &&
+      <div className='definition'>
+        {lex.definition}
+      </div>
+      }
+
+      {lex.usage ?
+      <div className='usage'>
+        {lex.usage}
+      </div> : ''
+      }
+
+      {lex.example && 
+      <div className='example'>
+        <h2>Examples</h2>
+        <ul>
+          {lex.example.map((example, index) =>
+            <li key={index}>{example}</li>
+          )}
+        </ul>
+      </div>
+      }
+
+      {lex.idiom && 
+      <div className='idiom'>
+        <h2>Idioms</h2>
+        <ul>
+          {lex.idiom.map((idiom, index) =>
+            <li key={index}>{idiom}</li>
+          )}
+        </ul>
+      </div>
+      }
+
+      {lex.compound && 
+      <div className='compound'>
+        <h2>Compounds</h2>
+        <ul>
+          {lex.compound.map((compound, index) =>
+            <li key={index}>{compound}</li>
+          )}
+        </ul>
+      </div>
+      }
+
+    </div>
+  );
+}
+
 const Word = (props) => {
   const word = props.word;
 
 
   return (
-    word ? 
+    word && 
     <div className='word'>
       <header className='row1'>
-        <h1>{ word.form ? word.form.replace(/[0-9,~]/g, '') : '' }</h1>
+        <h1>{ word.form ? word.form.replace(/[0-9,~]/g, '') : '' }{props.formNumber && <sup>{props.formNumber}</sup>}</h1>
         <WordArticle word={word} />
       </header>
       {word.pronunciation ?
@@ -65,18 +118,18 @@ const Word = (props) => {
         <div className='inflection'>
           {word.inflection}
         </div> : ''}
+      
+      {word.lexeme && word.lexeme[0] ? 
+        <div className='lexeme'>
+        {word.lexeme.map(
+          (lex, index) => 
+          <Lex lex={ lex } key={ index } />
+        )}
+      </div> : ''
+      }
 
-      {word.lexeme && word.lexeme.definition ?
-        <div className='definition'>
-          {word.lexeme.definition}
-        </div> : ''}
 
-        {word.lexeme && word.lexeme.compound ?
-        <div className='compound'>
-          {word.lexeme.compound}
-        </div> : ''}
-
-    </div> : ''
+    </div>
   );
 
 }
