@@ -1,6 +1,58 @@
 import lexin from '../assets/lexin';
+import React, { useRef } from 'react';
+
+const InsertChars = ({characters, searchFieldRef, setSelected, setResult, setFiltered, setSearch,
+    normalise }) => {
+
+  // This is just temporary, needs to be moved upwards
+  const handleChange = () => {
+    const input = searchFieldRef.current.value;
+    setSearch(input);
+    const matches = [];
+    if (input) for (let i = 0; i < lexin.words.length; i++) {
+      const wordForm = lexin.words[i].form.toLowerCase();
+      if (normalise(wordForm).startsWith(input.toLowerCase())) matches.push(lexin.words[i]);
+    }
+    setFiltered(matches);
+    const firstWord = matches[0];
+    if (firstWord) {
+      setSelected(firstWord);
+      setResult(firstWord);
+      document.getElementById('filtered').scrollTop = 0;
+    }
+  }
+
+  const insertChar = (character) => {
+    const inputField = searchFieldRef.current;
+    let startPos = 0;
+    let endPos = 0;
+    if (inputField.selectionStart || inputField.selectionStart === '0') {
+        startPos = inputField.selectionStart;
+        endPos = inputField.selectionEnd;
+        inputField.value = inputField.value.substring(0, startPos) + character + inputField.value.substring(endPos, inputField.value.length);
+    } else inputField.value += character;
+    inputField.focus();
+    inputField.selectionStart = inputField.selectionEnd = startPos + 1;
+    handleChange();
+    document.getElementById('filtered').scrollTop = 0;
+  }
+
+  if (characters) {
+    return (
+      <div id='insertchars'>
+        {characters.split('').map((character, index) =>
+          <span key={index} title={'Insert ' + character} onPointerDown={() => insertChar(character)}>
+            {character}
+          </span>
+        )}
+      </div>
+    );
+  } else return;
+}
 
 const Search = (props) => {
+
+  const searchFieldRef = useRef(null);
 
   // Idea via https://stackoverflow.com/a/15886205/4593394
   const normalise = (str) => {
@@ -57,8 +109,18 @@ const Search = (props) => {
         autoCorrect='off'
         autoCapitalize='off'
         spellCheck='false'
+        ref={ searchFieldRef }
       />
-      <span id='clear' title='Clear search (esc)' onClick={ clearSearch }></span>
+      <InsertChars 
+        characters='åäö' 
+        searchFieldRef={ searchFieldRef }
+        setSelected={props.setSelected}
+        setResult={props.setResult}
+        setFiltered={props.setFiltered}
+        setSearch={props.setSearch}
+        normalise={normalise}
+      />
+      <span id='clear' title='Clear search (esc)' onPointerDown={ clearSearch }></span>
     </div>
   );
 
