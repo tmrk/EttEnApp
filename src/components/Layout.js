@@ -3,6 +3,9 @@ import { ReactComponent as SvgCC } from '../assets/cc.svg';
 import { ReactComponent as SvgCCby } from '../assets/cc-by.svg';
 import { ReactComponent as SvgCCsa } from '../assets/cc-sa.svg';
 
+const Wrapper = props => <div id='wrapper' className={props.className}>{props.children}</div>;
+const Main = props => <div id='main' className={props.className}>{props.children}</div>;
+
 const Header = () => {
 
   return (
@@ -31,4 +34,4 @@ const Footer = () => {
 
 }
 
-export { Header, Footer };
+export { Wrapper, Main, Header, Footer };

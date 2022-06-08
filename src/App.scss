@@ -50,6 +50,7 @@ a {
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
+  font-size: 18px;
 
   & > header {
     height: 100px;
@@ -248,8 +249,7 @@ a {
     -webkit-overflow-scrolling: touch;
   
     li {
-      padding: 10px 20px;
-      word-break: break-all;
+      padding: 20px;
       cursor: pointer;
       hyphens: auto;
     }
@@ -302,7 +302,6 @@ a {
           font-weight: 800;
           line-height: 1.1em;
           flex-grow: 1;
-          word-break: break-all;
           hyphens: auto;
           position: relative;
         }
@@ -310,7 +309,7 @@ a {
         h1 sup {
           margin: -10px 0 0 5px;
           color: rgba(0,0,0,0.5);
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           font-weight: normal;
           position: absolute;
         }
@@ -358,12 +357,15 @@ a {
       font-style: italic;
       letter-spacing: 0.2px;
 
+      /*
       &::before { content: '('; }
       &::after  { content: ')'; }
+      */
     }
 
     .lexeme {
       margin: 15px 0 0;
+      line-height: 1.4rem;
 
       .lex {
         margin-bottom: 15px;
@@ -375,7 +377,6 @@ a {
 
         .definition {
           font-weight: 600;
-          line-height: 1.4rem;
         }
     
       }
@@ -385,27 +386,34 @@ a {
         font-size: 0.8em;
         font-weight: 500;
       }
-    
-      .example > ul, 
-      .idiom > ul,
-      .compound > ul {
-        padding: 0 0 0 20px;
-        font-size: 0.8em;
-        font-style: italic;
-        display: block;
 
-        li {
-          color: rgba(0,0,0,0.6);
-          list-style-type: square;
+      .usage,
+      .example,
+      .idiom,
+      .compound {
+        margin-top: 10px;
+
+        &:first-child { margin-top: 0; }
+      
+        ul {
+          padding: 0 0 0 20px;
+          font-style: italic;
+          display: block;
+  
+          li {
+            color: rgba(0,0,0,0.6);
+            list-style-type: square;
+          }
+  
         }
 
       }
+
+      .valency,
+      .grammat_comm {
+        display: none;
+      }
     
-    }
-    
-    .valency,
-    .grammat_comm {
-      display: none;
     }
   
   }

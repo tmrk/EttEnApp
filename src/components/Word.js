@@ -58,7 +58,7 @@ const Lex = ({ lex }) => {
 
       {lex.example && 
       <div className='example'>
-        <h2>Examples</h2>
+        {/* <h2>Examples</h2> */}
         <ul>
           {lex.example.map((example, index) =>
             <li key={index}>{example}</li>
@@ -69,7 +69,7 @@ const Lex = ({ lex }) => {
 
       {lex.idiom && 
       <div className='idiom'>
-        <h2>Idioms</h2>
+        {/* <h2>Idioms</h2> */}
         <ul>
           {lex.idiom.map((idiom, index) =>
             <li key={index}>{idiom}</li>
@@ -80,7 +80,7 @@ const Lex = ({ lex }) => {
 
       {lex.compound && 
       <div className='compound'>
-        <h2>Compounds</h2>
+        {/* <h2>Compounds</h2> */}
         <ul>
           {lex.compound.map((compound, index) =>
             <li key={index}>{compound}</li>
@@ -90,12 +90,11 @@ const Lex = ({ lex }) => {
       }
 
     </div>
-  );
+    );
 }
 
 const Word = (props) => {
   const word = props.word;
-
 
   return (
     word && 

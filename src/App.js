@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Search from './components/Search';
 import Filtered from './components/Filtered';
 import Result from './components/Result';
-import { Header, Footer } from './components/Layout';
+import { Wrapper, Main, Header, Footer } from './components/Layout';
 
 function App() {
 
@@ -58,7 +58,7 @@ function App() {
   });
 
   return (
-    <div id='wrapper' className={ search ? 'on notouch' : 'notouch' }>
+    <Wrapper className={ search ? 'on notouch' : 'notouch' }>
       <Header />
       <Search 
         search={search} 
@@ -67,7 +67,7 @@ function App() {
         setSelected={setSelected}
         setResult={setResult}
       />
-      <div id='main' className={ filtered.length ? '' : 'noresult' }>
+      <Main className={ filtered.length ? '' : 'noresult' }>
         <Filtered 
           filtered={filtered} 
           setFiltered={setFiltered}
@@ -79,9 +79,9 @@ function App() {
           result={ result } 
           setSearch={setSearch}
         />
-      </div>
+      </Main>
       <Footer />
-    </div>
+    </Wrapper>
   );
 
 }

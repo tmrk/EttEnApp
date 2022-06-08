@@ -8,7 +8,7 @@ const FilteredWord = (props) => {
   return (
     <li 
       className={ props.word === props.selected ? 'selected' : '' }
-      onClick={ handleClick }
+      onPointerDown={ handleClick }
     >
       { props.word.form.replace(/[0-9,~]/g, '') }
     </li>

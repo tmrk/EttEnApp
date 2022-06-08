@@ -31,10 +31,10 @@ const InsertChars = ({characters, searchFieldRef, setSelected, setResult, setFil
         endPos = inputField.selectionEnd;
         inputField.value = inputField.value.substring(0, startPos) + character + inputField.value.substring(endPos, inputField.value.length);
     } else inputField.value += character;
-    inputField.focus();
     inputField.selectionStart = inputField.selectionEnd = startPos + 1;
     handleChange();
     document.getElementById('filtered').scrollTop = 0;
+    inputField.focus();
   }
 
   if (characters) {
