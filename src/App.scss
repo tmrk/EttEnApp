@@ -1,4 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* Webfont: SwedenSans-Book */
+@font-face {
+  font-family: 'SwedenSans';
+  src: url('./assets/fonts/SwedenSansBook.woff2') format('woff2'),
+       url('./assets/fonts/SwedenSansBook.otf') format('opentype');
+           font-style: normal;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: SwedenSans-Regular */
+@font-face {
+  font-family: 'SwedenSans';
+  src: url('./assets/fonts/SwedenSansRegular.woff2') format('woff2'),
+       url('./assets/fonts/SwedenSansRegular.otf') format('opentype');
+           font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: SwedenSans-SemBold */
+@font-face {
+  font-family: 'SwedenSans';
+  src: url('./assets/fonts/SwedenSansSemiBold.woff2') format('woff2'),
+       url('./assets/fonts/SwedenSansSemiBold.otf') format('opentype');
+           font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* Webfont: SwedenSans-Bold */
+@font-face {
+  font-family: 'SwedenSans';
+  src: url('./assets/fonts/SwedenSansBold.woff2') format('woff2'),
+       url('./assets/fonts/SwedenSansBold.otf') format('opentype');
+           font-style: normal;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+}
+
+$blue: rgb(20, 82, 147);
+$yellow: rgb(254, 203, 0);
 
 * {
   margin: 0;
@@ -7,6 +49,7 @@
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: default;
+  user-select: none;
 }
 
 html {
@@ -19,8 +62,9 @@ html, body {
 }
 
 body {
-  background: #eee;
-  font-family: 'Open Sans', sans-serif;
+  background: $blue;
+  font-family: 'SwedenSans', sans-serif;
+  letter-spacing: 1px;
 }
 
 a {
@@ -50,38 +94,38 @@ a {
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
 
   & > header {
     height: 100px;
-    gap: 5px;
-    $header-color: #ccc;
+    gap: 10px;
+    $header-color: rgba(255,255,255,0.8);
   
     #logo {
-      height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
   
     svg {
-      width: 120px;
 
       path {
         fill: $header-color;
       }
 
       path.bg {
-        fill: #fff;
+        fill: none;
       }
     }
   
     h1 {
+      padding-top: 5px;
       color: $header-color;
       text-transform: uppercase;
       text-align: left;
       font-size: 1rem;
-      line-height: 1.2rem;
+      font-weight: 800;
+      line-height: 1.4rem;
     }
 
   }
@@ -144,13 +188,14 @@ a {
   input#word {
     width: calc(100% - 200px);
     height: 40px;
-    padding: 20px 180px 20px 20px;
+    padding: 20px 180px 15px 20px;
     border: none;
     background: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'SwedenSans', sans-serif;
     font-size: 2rem;
     letter-spacing: 1px;
     cursor: text;
+    user-select: text;
   
     &::placeholder {
       color: #ccc;
@@ -166,10 +211,12 @@ a {
 }
 
 #insertchars {
-  padding: 20px 0;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 20px;
+  display: flex;
+  align-items: center;
 }
 
 #wrapper.on #insertchars {
@@ -178,15 +225,17 @@ a {
 
 #insertchars > span {
   width: 38px;
-  height: 38px;
+  height: 33px;
   margin: 0 5px;
+  padding-top: 5px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background: #fff;
   color: #ddd;
-  display: inline-block;
-  text-align: center;
-  font-size: 1.6rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
   line-height: 38px;
   cursor: pointer;
 }
@@ -217,9 +266,12 @@ a {
 
 #main {
   width: 100%;
-  height: calc(100% - 80px);
-  background: #f6f6f6;
+  height: calc(100% - 75px);
   display: none;
+
+  &.noresult {
+    background: rgba(255,255,255,0.9);
+  }
 
   &.noresult #filtered,
   &.noresult #result {
@@ -241,7 +293,7 @@ a {
   #filtered {
     width: 200px;
     height: 100%;
-    background: #e6e6e6;
+    background: rgba(255,255,255,0.5);
     display: block;
     float: left;
     overflow-x: hidden;
@@ -249,18 +301,20 @@ a {
     -webkit-overflow-scrolling: touch;
   
     li {
-      padding: 20px;
+      padding: 24px 20px;
       cursor: pointer;
       hyphens: auto;
     }
   
     li.selected {
-      background: #d3d3d3;
+      background: $blue;
+      color: #fff;
     }
   
     .notouch & li:hover,
     .touch & li:active {
-      background: #ddd;
+      background: $yellow;
+      color: #000;
     }
   
   }
@@ -268,6 +322,7 @@ a {
   #result {
     width: calc(100% - 200px);
     height: 100%;
+    background: rgba(255,255,255,0.9);
     position: relative;
     display: block;
     float: left;
@@ -285,10 +340,11 @@ a {
     }
 
     .word {
-      margin: 20px 20px 0;
-      padding: 0 0 20px 0;
+      margin: 35px 20px 0;
+      padding: 0 0 35px 0;
       border-bottom: 1px solid rgba(0,0,0,0.1);
 
+      &:first-of-type { margin-top: 20px; }
       &:last-of-type { border-bottom: none; }
     
       header {
@@ -300,14 +356,16 @@ a {
         h1 {
           padding: 6px 0;
           font-weight: 800;
-          line-height: 1.1em;
+          line-height: 1.2em;
           flex-grow: 1;
           hyphens: auto;
+          word-break: break-word;
           position: relative;
+          user-select: text;
         }
         
         h1 sup {
-          margin: -10px 0 0 5px;
+          margin: -14px 0 0 5px;
           color: rgba(0,0,0,0.5);
           font-size: 1.1rem;
           font-weight: normal;
@@ -316,12 +374,11 @@ a {
 
         .article > span {
           height: 44px;
-          padding: 0 10px;
-          border: 2px solid #000;
+          padding: 4px 12px 0;
+          border: 2.5px solid #000;
           border-radius: 10px;
-          font-size: 2rem;
-          font-weight: bold;
-          line-height: 2rem;
+          font-size: 2.1rem;
+          font-weight: 800;
           display: flex;
           align-items: center;
           cursor: default;
@@ -330,8 +387,9 @@ a {
     }
     
     .pronunciation {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       color: #bbb;
+      user-select: text;
     
       &::before { content: '|\00a0\00a0'; }
       &::after  { content: '\00a0\00a0|'; }
@@ -339,6 +397,8 @@ a {
     
     .pos {
       display: inline;
+      line-height: 1.8rem;
+      user-select: text;
     }
 
     .link {
@@ -356,6 +416,7 @@ a {
       color: #666;
       font-style: italic;
       letter-spacing: 0.2px;
+      user-select: text;
 
       /*
       &::before { content: '('; }
@@ -364,8 +425,10 @@ a {
     }
 
     .lexeme {
-      margin: 15px 0 0;
-      line-height: 1.4rem;
+      margin: 20px 0 0;
+      line-height: 1.8rem;
+
+      * { user-select: text; }
 
       .lex {
         margin-bottom: 15px;
@@ -376,7 +439,7 @@ a {
         &:last-of-type { margin-bottom: 0; }
 
         .definition {
-          font-weight: 600;
+          /*font-weight: 600;*/
         }
     
       }

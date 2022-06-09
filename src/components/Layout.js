@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '../assets/ettapp-logo.svg';
+import { ReactComponent as Logo } from '../assets/ettenapp-logo.svg';
 import { ReactComponent as SvgCC } from '../assets/cc.svg';
 import { ReactComponent as SvgCCby } from '../assets/cc-by.svg';
 import { ReactComponent as SvgCCsa } from '../assets/cc-sa.svg';
@@ -28,7 +28,7 @@ const Footer = () => {
         <SvgCCby />
         <SvgCCsa />
       </a>
-      <span>EttApp (2022) is based on <a href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a></span>
+      <span>EttEnApp (2022) is based on <a href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a></span>
     </footer>
   );
 
