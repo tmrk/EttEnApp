@@ -1,5 +1,6 @@
 import lexin from '../assets/lexin';
 import React, { useRef } from 'react';
+import { ReactComponent as SvgClose } from '../assets/close.svg';
 
 const InsertChars = ({characters, searchFieldRef, setSelected, setResult, setFiltered, setSearch,
     normalise }) => {
@@ -120,7 +121,9 @@ const Search = (props) => {
         setSearch={props.setSearch}
         normalise={normalise}
       />
-      <span id='clear' title='Clear search (esc)' onPointerDown={ clearSearch }></span>
+      <span id='clear' title='Clear search (esc)' onPointerDown={ clearSearch }>
+        <SvgClose />
+      </span>
     </div>
   );
 
