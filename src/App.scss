@@ -41,11 +41,13 @@
 
 $blue: rgb(20, 82, 147);
 $yellow: rgb(254, 203, 0);
-$red: rgb(209, 56, 43);
+$dawn-blue: rgb(26, 48, 80);
 $grain-yellow: rgb(232, 227, 209);
 $pale-yellow: rgb(255, 212, 129);
 $pale-winter-grey-1: rgb(250, 250, 250);
 $pale-winter-grey-2: rgb(237, 237, 237);
+$red-minus-3: rgb(237, 176, 171);
+$red: rgb(209, 56, 43);
 $green-minus-3: rgb(153, 222, 201);
 $blue-minus-3: rgb(153, 213, 237);
 
@@ -74,13 +76,13 @@ html, body {
 }
 
 body {
-  background: $blue;
   font-family: 'SwedenSans', sans-serif;
   letter-spacing: 1px;
+  background: linear-gradient(45deg, $dawn-blue, $blue);
 }
 
 a {
-  color: #ccc;
+  color: $pale-winter-grey-1;
   cursor: pointer;
   
   * {
@@ -90,7 +92,7 @@ a {
 
 .notouch a:hover,
 .touch a:active {
-  color: #aaa;
+  color: $yellow;
   text-decoration: none;
 }
 
@@ -104,14 +106,13 @@ a {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   align-content: center;
   align-items: center;
   font-size: 22px;
 
   & > header {
-    height: 100px;
     gap: 10px;
-    $header-color: rgba(255,255,255,0.8);
   
     #logo {
       display: flex;
@@ -122,7 +123,7 @@ a {
     svg {
 
       path {
-        fill: $header-color;
+        fill: $pale-winter-grey-1;
       }
 
       path.bg {
@@ -132,12 +133,14 @@ a {
   
     h1 {
       padding-top: 5px;
-      color: $header-color;
+      color: $pale-winter-grey-1;
       text-transform: uppercase;
       text-align: left;
       font-size: 1rem;
       font-weight: 800;
       line-height: 1.4rem;
+      display: flex;
+      align-items: center;
     }
 
   }
@@ -145,18 +148,18 @@ a {
   & > header,
   & > footer {
     width: 100%;
-    height: 150px;
-    color: #ccc;
+    color: $pale-winter-grey-1;
     text-align: center;
     display: flex;
-    align-items: center;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    flex-grow: 1;
   }
 
   & > footer {
     font-size: 0.8rem;
+    align-items: baseline;
   }
 
   & > footer span {
@@ -170,12 +173,12 @@ a {
   }
   
   & > footer a svg path {
-    fill: #ccc;
+    fill: $pale-winter-grey-1;
   }
 
   &.notouch > footer a:hover svg path,
   &.touch > footer a:focus svg path {
-    fill: #aaa;
+    fill: $yellow;
   }
 
   &.on {
@@ -285,11 +288,10 @@ a {
 
 .notouch #clear:hover,
 .touch #clear:focus {
-  background-color: $red;
-  color: #fff;
+  background-color: $red-minus-3;
 
   svg path {
-    fill: #fff;
+    fill: #000;
   }
 }
 
@@ -402,11 +404,11 @@ a {
         }
 
         .article  {
-          margin-top: 6px;
+          margin-top: 0px;
 
           & > span {
             height: 44px;
-            padding: 0 12px 2px;
+            padding: 4px 12px 0px;
             border: 2.5px solid #000;
             border-radius: 10px;
             font-size: 2.1rem;

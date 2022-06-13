@@ -23,12 +23,12 @@ const Footer = () => {
 
   return (
     <footer>
-      <a id="cclicense" rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons License BY-SA 4.0">
+      <a id='cclicense' rel='license' href='https://creativecommons.org/licenses/by-sa/4.0/' title='Creative Commons License BY-SA 4.0'>
         <SvgCC />
         <SvgCCby />
         <SvgCCsa />
       </a>
-      <span>EttEnApp (2022) is based on <a href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a></span>
+      <span>EttEnApp (2022) is based on <a href='https://spraakbanken.gu.se/resource/lexin' rel='dct:source'>LEXIN Second Edition</a></span>
     </footer>
   );
 
