@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/EttEnApp/static/css/main.68c20005.css",
-    "main.js": "/EttEnApp/static/js/main.835444c9.js",
+    "main.css": "/EttEnApp/static/css/main.01d9e463.css",
+    "main.js": "/EttEnApp/static/js/main.147321df.js",
     "static/js/787.0b7ea8a6.chunk.js": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js",
     "static/media/SwedenSansBold.otf": "/EttEnApp/static/media/SwedenSansBold.662ac4185b3a9074eca6.otf",
     "static/media/SwedenSansRegular.otf": "/EttEnApp/static/media/SwedenSansRegular.c0a0040277179d1b6289.otf",
@@ -17,12 +17,12 @@
     "static/media/cc-by.svg": "/EttEnApp/static/media/cc-by.e1fc189d6ca58561030b02b1878e117d.svg",
     "index.html": "/EttEnApp/index.html",
     "static/media/close.svg": "/EttEnApp/static/media/close.5cd3645cf868e38fd4b537249c2397f6.svg",
-    "main.68c20005.css.map": "/EttEnApp/static/css/main.68c20005.css.map",
-    "main.835444c9.js.map": "/EttEnApp/static/js/main.835444c9.js.map",
+    "main.01d9e463.css.map": "/EttEnApp/static/css/main.01d9e463.css.map",
+    "main.147321df.js.map": "/EttEnApp/static/js/main.147321df.js.map",
     "787.0b7ea8a6.chunk.js.map": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68c20005.css",
-    "static/js/main.835444c9.js"
+    "static/css/main.01d9e463.css",
+    "static/js/main.147321df.js"
   ]
 }
