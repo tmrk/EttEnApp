@@ -118,7 +118,7 @@ const Word = (props) => {
           {word.inflection}
         </div> : ''}
       
-      {word.lexeme && word.lexeme[0] ? 
+      {word.lexeme && word.lexeme[0] && word.lexeme[0].definition ? 
         <div className='lexeme'>
         {word.lexeme.map(
           (lex, index) => 

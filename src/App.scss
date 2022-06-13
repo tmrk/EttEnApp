@@ -203,7 +203,7 @@ a {
   input#word {
     width: calc(100% - 213px);
     height: 40px;
-    padding: 20px 193px 15px 20px;
+    padding: 30px 193px 25px 20px;
     border: none;
     border-radius: 0;
     -webkit-appearance: none;
@@ -222,7 +222,8 @@ a {
   
   &.on #word {
     width: calc(100% - 294px);
-    padding-right: 274px;
+    padding: 20px 274px 15px 20px;
+
   }
 
 }
@@ -447,6 +448,7 @@ a {
       display: inline;
       color: #666;
       font-style: italic;
+      line-height: 2rem;
       letter-spacing: 0.2px;
       user-select: text;
 

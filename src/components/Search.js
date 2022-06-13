@@ -7,7 +7,8 @@ const InsertChars = ({characters, searchFieldRef, setSelected, setResult, setFil
 
   // This is just temporary, needs to be moved upwards
   const handleChange = () => {
-    const input = searchFieldRef.current.value;
+    const inputField = searchFieldRef.current;
+    const input = inputField.value;
     setSearch(input);
     const matches = [];
     if (input) for (let i = 0; i < lexin.words.length; i++) {
@@ -21,6 +22,7 @@ const InsertChars = ({characters, searchFieldRef, setSelected, setResult, setFil
       setResult(firstWord);
       document.getElementById('filtered').scrollTop = 0;
     }
+    searchFieldRef.current.focus();
   }
 
   const insertChar = (character) => {
@@ -34,8 +36,6 @@ const InsertChars = ({characters, searchFieldRef, setSelected, setResult, setFil
     } else inputField.value += character;
     inputField.selectionStart = inputField.selectionEnd = startPos + 1;
     handleChange();
-    document.getElementById('filtered').scrollTop = 0;
-    inputField.focus();
   }
 
   if (characters) {

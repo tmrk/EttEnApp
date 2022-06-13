@@ -18,6 +18,6 @@ const Filtered = (props) => {
     </ul>
   );
   
-}
+};
 
 export default Filtered;

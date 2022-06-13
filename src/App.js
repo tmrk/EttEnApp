@@ -25,7 +25,11 @@ function App() {
             if (nextWord) {
               setSelected(nextWord);
               setResult(nextWord);
-              if (liSelected.nextSibling.getBoundingClientRect().bottom - ulFiltered.getBoundingClientRect().height - 80 >= 0) ulFiltered.scrollTop = liSelected.nextSibling.offsetTop - ulFiltered.getBoundingClientRect().height - liSelected.nextSibling.getBoundingClientRect().height + 4;
+              if (liSelected.nextSibling.getBoundingClientRect().bottom 
+                - ulFiltered.getBoundingClientRect().height - 80 >= 0) {
+                  ulFiltered.scrollTop = liSelected.nextSibling.offsetTop 
+                  - ulFiltered.getBoundingClientRect().height;
+                }
             }
           }
           break;
@@ -36,7 +40,7 @@ function App() {
             if (prevWord) {
               setSelected(prevWord);
               setResult(prevWord);
-              if (liSelected.previousSibling.offsetTop - 80 <= ulFiltered.scrollTop) ulFiltered.scrollTop = liSelected.previousSibling.offsetTop - 80;
+              if (liSelected.previousSibling.offsetTop - 75 <= ulFiltered.scrollTop) ulFiltered.scrollTop = liSelected.previousSibling.offsetTop - 75;
             }
           }
           break;
@@ -56,6 +60,8 @@ function App() {
       document.removeEventListener('keydown', handleKeydown);
     };
   });
+
+  //const filteredRef = useRef(null);
 
   return (
     <Wrapper className={ search ? 'on notouch' : 'notouch' }>
