@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/EttEnApp/static/css/main.2d40a97a.css",
-    "main.js": "/EttEnApp/static/js/main.3e3daa2c.js",
+    "main.css": "/EttEnApp/static/css/main.15ddb69c.css",
+    "main.js": "/EttEnApp/static/js/main.38118909.js",
     "static/js/787.0b7ea8a6.chunk.js": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js",
     "static/media/SwedenSansBold.otf": "/EttEnApp/static/media/SwedenSansBold.662ac4185b3a9074eca6.otf",
     "static/media/SwedenSansRegular.otf": "/EttEnApp/static/media/SwedenSansRegular.c0a0040277179d1b6289.otf",
@@ -11,17 +11,18 @@
     "static/media/SwedenSansRegular.woff2": "/EttEnApp/static/media/SwedenSansRegular.142417264247d4967410.woff2",
     "static/media/SwedenSansBook.woff2": "/EttEnApp/static/media/SwedenSansBook.44fe4e440be81972f3cf.woff2",
     "static/media/SwedenSansSemiBold.woff2": "/EttEnApp/static/media/SwedenSansSemiBold.d29d16bd68769e124173.woff2",
-    "static/media/ettenapp-logo.svg": "/EttEnApp/static/media/ettenapp-logo.5c49d57b9edb2dd18994ea3ba3e8ad79.svg",
-    "static/media/cc.svg": "/EttEnApp/static/media/cc.2df9fb7d2ed2308b5c5d7d9e4f3386f2.svg",
-    "static/media/cc-sa.svg": "/EttEnApp/static/media/cc-sa.28c50e5a7656b57b477a3dc790f61514.svg",
-    "static/media/cc-by.svg": "/EttEnApp/static/media/cc-by.e1fc189d6ca58561030b02b1878e117d.svg",
+    "static/media/ettenapp-logo.svg": "/EttEnApp/static/media/ettenapp-logo.bd63070792d2d72f620bc784ec4ed8fc.svg",
+    "static/media/cc.svg": "/EttEnApp/static/media/cc.ed005e0a36856f26e745e70ace34af27.svg",
+    "static/media/cc-sa.svg": "/EttEnApp/static/media/cc-sa.28565e15f12fc1d5548bd01e1c6056a7.svg",
+    "static/media/cc-by.svg": "/EttEnApp/static/media/cc-by.335d8731d66ebc30edb7093b856c5a36.svg",
     "index.html": "/EttEnApp/index.html",
-    "main.2d40a97a.css.map": "/EttEnApp/static/css/main.2d40a97a.css.map",
-    "main.3e3daa2c.js.map": "/EttEnApp/static/js/main.3e3daa2c.js.map",
+    "static/media/close.svg": "/EttEnApp/static/media/close.5cd3645cf868e38fd4b537249c2397f6.svg",
+    "main.15ddb69c.css.map": "/EttEnApp/static/css/main.15ddb69c.css.map",
+    "main.38118909.js.map": "/EttEnApp/static/js/main.38118909.js.map",
     "787.0b7ea8a6.chunk.js.map": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d40a97a.css",
-    "static/js/main.3e3daa2c.js"
+    "static/css/main.15ddb69c.css",
+    "static/js/main.38118909.js"
   ]
 }
