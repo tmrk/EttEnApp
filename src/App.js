@@ -4,6 +4,7 @@ import Search from './components/Search';
 import Filtered from './components/Filtered';
 import Result from './components/Result';
 import { Wrapper, Main, Header, Footer } from './components/Layout';
+import { isMobile } from 'react-device-detect';
 
 function App() {
 
@@ -64,7 +65,7 @@ function App() {
   //const filteredRef = useRef(null);
 
   return (
-    <Wrapper className={ search ? 'on notouch' : 'notouch' }>
+    <Wrapper className={ (isMobile ? 'touch' : 'notouch') + (search ? ' on' : '') }>
       <Header />
       <Search 
         search={search} 

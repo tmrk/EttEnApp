@@ -46,6 +46,7 @@ $grain-yellow: rgb(232, 227, 209);
 $pale-yellow: rgb(255, 212, 129);
 $pale-winter-grey-1: rgb(250, 250, 250);
 $pale-winter-grey-2: rgb(237, 237, 237);
+$winter-grey: rgb(189, 189, 189);
 $red-minus-3: rgb(237, 176, 171);
 $red: rgb(209, 56, 43);
 $green-minus-3: rgb(153, 222, 201);
@@ -66,13 +67,13 @@ $blue-minus-3: rgb(153, 213, 237);
   }
 }
 
+html, body {
+  height: 100dvh;
+}
+
 html {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
-}
-
-html, body {
-  height: 100%;
 }
 
 body {
@@ -103,13 +104,16 @@ a {
 #wrapper {
   width: 620px;
   height: 100%;
-  margin: 0 auto;
+  margin: 0 0 0 -310px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
   align-items: center;
   font-size: 22px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
 
   & > header {
     gap: 10px;
@@ -200,75 +204,63 @@ a {
 
   #search {
     width: 100%;
-    position: relative;
-  }
-
-  input#word {
-    width: calc(100% - 213px);
-    height: 40px;
-    padding: 30px 193px 25px 20px;
-    border: none;
-    border-radius: 0;
-    -webkit-appearance: none;
+    display: flex;
+    align-items: stretch;
     background: #fff;
-    font-family: 'SwedenSans', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    cursor: text;
-    user-select: text;
-  
-    &::placeholder {
-      color: #ccc;
-      letter-spacing: 0;
+
+    input#word {
+      height: 40px;
+      padding: 30px 20px 25px 20px;
+      border: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+      background: #fff;
+      font-family: 'SwedenSans', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      cursor: text;
+      user-select: text;
+      flex-grow: 1;
+      overflow: hidden;
+    
+      &::placeholder {
+        color: #ccc;
+        letter-spacing: 0;
+      }
+    }
+
+    #insertchars {
+      display: flex;
+      align-items: center;
+
+      span {
+        width: 65px;
+        height: 100%;
+        color: #ddd;
+        border-left: 1px solid #eee;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        cursor: pointer;
+      
+        .notouch &:hover {
+          color: #000;
+        }
+      }
     }
   }
-  
-  &.on #word {
-    width: calc(100% - 294px);
-    padding: 20px 274px 15px 20px;
-
-  }
-
 }
 
-#insertchars {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-}
-
-#wrapper.on #insertchars {
-  right: 81px;
-}
-
-#insertchars > span {
-  width: 60px;
-  height: 100%;
-  color: #ddd;
-  border-left: 1px solid #eee;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.notouch #insertchars > span:hover,
-.touch #insertchars > span:focus {
+#wrapper.notouch #search #insertchars span:hover,
+#wrapper.touch #search #insertchars span:focus {
   background: $yellow;
   color: #000;
 }
 
 #clear {
-  width: 80px;
-  height: 100%;
+  padding: 0 10px;
   border-left: 1px solid #eee;
-  position: absolute;
-  top: 0;
-  right: 0;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -277,7 +269,7 @@ a {
   * { cursor: pointer; }    
 
   svg {
-    width: 50%;
+    width: 80px;
     height: 50%;
     
     path {
@@ -340,6 +332,10 @@ a {
     li.selected {
       background: $yellow;
       color: #000;
+
+      .notouch &:hover {
+        background: $yellow;
+      }
     }
   
     .notouch & li:hover,
@@ -373,7 +369,7 @@ a {
     .word {
       margin: 35px 20px 0;
       padding: 0 0 35px 0;
-      border-bottom: 1px solid $pale-winter-grey-2;
+      border-bottom: 1px solid $winter-grey;
 
       &:first-of-type { margin-top: 20px; }
       &:last-of-type { border-bottom: none; }
