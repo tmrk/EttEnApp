@@ -2,7 +2,7 @@
 
 <a href="https://tmrk.github.io/EttEnApp/"><img align="right" src="src/assets/ettenapp-logo.svg" alt="EttEnApp logo" width="20%" /></a>
 
-**EttEnApp** is an iteration of a [previous project called](https://github.com/tmrk/QuickSwedishWordbook) that was written in Vanilla JavaScript - which I decided to rewrite in **ReactJS** (and using Sass), mainly in order to start experimenting with React Native deployments later on.
+**EttEnApp** is an iteration of a [previous project](https://github.com/tmrk/QuickSwedishWordbook) that was written in Vanilla JavaScript - which I decided to rewrite in **ReactJS** (and using Sass), mainly in order to start experimenting with React Native deployments later on.
 
 The idea remains the same: to provide an easy and quick way to look up Swedish words. 
 
