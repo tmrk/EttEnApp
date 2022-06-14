@@ -1,44 +1,10 @@
-/* Webfont: SwedenSans-Book */
-@font-face {
-  font-family: 'SwedenSans';
-  src: url('./assets/fonts/SwedenSansBook.woff2') format('woff2'),
-       url('./assets/fonts/SwedenSansBook.otf') format('opentype');
-           font-style: normal;
-  font-weight: 300;
-  text-rendering: optimizeLegibility;
-}
+/* Fonts */
+@font-face {font-family: 'SwedenSans'; src: url('./assets/fonts/SwedenSansBook.woff2') format('woff2'), url('./assets/fonts/SwedenSansBook.otf') format('opentype'); font-style: normal; font-weight: 300; text-rendering: optimizeLegibility;}
+@font-face {font-family: 'SwedenSans'; src: url('./assets/fonts/SwedenSansRegular.woff2') format('woff2'), url('./assets/fonts/SwedenSansRegular.otf') format('opentype'); font-style: normal; font-weight: normal; text-rendering: optimizeLegibility;}
+@font-face {font-family: 'SwedenSans'; src: url('./assets/fonts/SwedenSansSemiBold.woff2') format('woff2'), url('./assets/fonts/SwedenSansSemiBold.otf') format('opentype'); font-style: normal; font-weight: bold; text-rendering: optimizeLegibility;}
+@font-face {font-family: 'SwedenSans'; src: url('./assets/fonts/SwedenSansBold.woff2') format('woff2'), url('./assets/fonts/SwedenSansBold.otf') format('opentype'); font-style: normal; font-weight: 800; text-rendering: optimizeLegibility;}
 
-/* Webfont: SwedenSans-Regular */
-@font-face {
-  font-family: 'SwedenSans';
-  src: url('./assets/fonts/SwedenSansRegular.woff2') format('woff2'),
-       url('./assets/fonts/SwedenSansRegular.otf') format('opentype');
-           font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-
-/* Webfont: SwedenSans-SemBold */
-@font-face {
-  font-family: 'SwedenSans';
-  src: url('./assets/fonts/SwedenSansSemiBold.woff2') format('woff2'),
-       url('./assets/fonts/SwedenSansSemiBold.otf') format('opentype');
-           font-style: normal;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-}
-
-
-/* Webfont: SwedenSans-Bold */
-@font-face {
-  font-family: 'SwedenSans';
-  src: url('./assets/fonts/SwedenSansBold.woff2') format('woff2'),
-       url('./assets/fonts/SwedenSansBold.otf') format('opentype');
-           font-style: normal;
-  font-weight: 800;
-  text-rendering: optimizeLegibility;
-}
-
+/* Theme colours */
 $blue: rgb(20, 82, 147);
 $yellow: rgb(254, 203, 0);
 $dawn-blue: rgb(26, 48, 80);
@@ -67,8 +33,10 @@ $blue-minus-3: rgb(153, 213, 237);
   }
 }
 
-html, body {
+html, body, #root {
   height: 100dvh;
+  height: 100%;
+  overflow: hidden;
 }
 
 html {
@@ -97,31 +65,24 @@ a {
   text-decoration: none;
 }
 
-#root {
-  height: 100%;
-}
-
 #wrapper {
   width: 620px;
   height: 100%;
-  margin: 0 0 0 -310px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  font-size: 22px;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
+  font-size: 24px;
 
   & > header {
     gap: 10px;
+    display: flex;
+    align-items: flex-end;
   
     #logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin-bottom: 5%;
     }
   
     svg {
@@ -143,8 +104,7 @@ a {
       font-size: 1rem;
       font-weight: 800;
       line-height: 1.4rem;
-      display: flex;
-      align-items: center;
+      display: none;
     }
 
   }
@@ -155,20 +115,25 @@ a {
     color: $pale-winter-grey-1;
     text-align: center;
     display: flex;
-    align-content: center;
     justify-content: center;
-    flex-wrap: wrap;
     flex-grow: 1;
   }
 
   & > footer {
+    margin-top: 5%;
     font-size: 0.8rem;
-    align-items: baseline;
-  }
+    align-items: flex-start;
 
-  & > footer span {
-    width: 100%;
-    margin-top: 10px;
+    div {
+      flex-wrap: wrap; 
+
+      span {
+        width: 100%;
+        margin-top: 10px;
+        display: block;
+      }
+    }
+
   }
   
   & > footer a svg {
@@ -216,7 +181,7 @@ a {
       -webkit-appearance: none;
       background: #fff;
       font-family: 'SwedenSans', sans-serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       letter-spacing: 1px;
       cursor: text;
       user-select: text;
@@ -224,7 +189,7 @@ a {
       overflow: hidden;
     
       &::placeholder {
-        color: #ccc;
+        color: $winter-grey;
         letter-spacing: 0;
       }
     }
@@ -236,12 +201,12 @@ a {
       span {
         width: 65px;
         height: 100%;
-        color: #ddd;
-        border-left: 1px solid #eee;
+        color: $winter-grey;
+        border-left: 1px solid $pale-winter-grey-2;
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        font-size: 2rem;
+        font-size: 2.2rem;
         cursor: pointer;
       
         .notouch &:hover {
@@ -289,7 +254,8 @@ a {
 
 #main {
   width: 100%;
-  height: calc(100% - 75px);
+  height: calc(100% - 95px);
+  overflow: hidden;
   display: none;
 
   &.noresult {
@@ -314,13 +280,11 @@ a {
   }
 
   #filtered {
-    width: 200px;
-    height: 100%;
     background: $blue-minus-3;
     display: block;
-    float: left;
     overflow-x: hidden;
     overflow-y: auto;
+    flex: 0 0 190px;
     -webkit-overflow-scrolling: touch;
   
     li {
@@ -347,13 +311,11 @@ a {
   }
   
   #result {
-    width: calc(100% - 200px);
-    height: 100%;
     background: $pale-winter-grey-2;
     position: relative;
     display: block;
-    float: left;
     line-height: 1.2rem;
+    flex-grow: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     

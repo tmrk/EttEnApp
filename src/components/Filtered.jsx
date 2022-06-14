@@ -3,7 +3,7 @@ import FilteredWord from './FilteredWord';
 const Filtered = (props) => {
   
   return (
-    <ul id='filtered'>
+    <ul id='filtered' ref={props.filteredRef}>
       {(props.filtered.length) ? 
         props.filtered.map((word, index) => (
           <FilteredWord 

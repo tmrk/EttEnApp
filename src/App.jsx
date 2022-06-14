@@ -1,5 +1,5 @@
 import './App.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Search from './components/Search';
 import Filtered from './components/Filtered';
 import Result from './components/Result';
@@ -62,7 +62,8 @@ function App() {
     };
   });
 
-  //const filteredRef = useRef(null);
+  const filteredRef = useRef(null);
+  const searchFieldRef = useRef(null);
 
   return (
     <Wrapper className={ (isMobile ? 'touch' : 'notouch') + (search ? ' on' : '') }>
@@ -73,6 +74,8 @@ function App() {
         setFiltered={setFiltered}
         setSelected={setSelected}
         setResult={setResult}
+        searchFieldRef={searchFieldRef}
+        filteredRef={filteredRef}
       />
       <Main className={ filtered.length ? '' : 'noresult' }>
         <Filtered 
@@ -81,6 +84,7 @@ function App() {
           setResult={setResult}
           setSelected={setSelected}
           selected={selected}
+          filteredRef={filteredRef}
         />
         <Result 
           result={ result } 
