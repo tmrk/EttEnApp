@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/EttEnApp/static/css/main.acccdb00.css",
-    "main.js": "/EttEnApp/static/js/main.fbb73586.js",
-    "static/js/787.0b7ea8a6.chunk.js": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js",
-    "static/media/SwedenSansBold.otf": "/EttEnApp/static/media/SwedenSansBold.662ac4185b3a9074eca6.otf",
-    "static/media/SwedenSansRegular.otf": "/EttEnApp/static/media/SwedenSansRegular.c0a0040277179d1b6289.otf",
-    "static/media/SwedenSansBook.otf": "/EttEnApp/static/media/SwedenSansBook.f5803b4274e1a4838112.otf",
-    "static/media/SwedenSansSemiBold.otf": "/EttEnApp/static/media/SwedenSansSemiBold.8c212e4de1a55cf969a1.otf",
-    "static/media/SwedenSansBold.woff2": "/EttEnApp/static/media/SwedenSansBold.a71a1aa22286ae453111.woff2",
-    "static/media/SwedenSansRegular.woff2": "/EttEnApp/static/media/SwedenSansRegular.142417264247d4967410.woff2",
-    "static/media/SwedenSansBook.woff2": "/EttEnApp/static/media/SwedenSansBook.44fe4e440be81972f3cf.woff2",
-    "static/media/SwedenSansSemiBold.woff2": "/EttEnApp/static/media/SwedenSansSemiBold.d29d16bd68769e124173.woff2",
-    "static/media/ettenapp-logo.svg": "/EttEnApp/static/media/ettenapp-logo.bd63070792d2d72f620bc784ec4ed8fc.svg",
-    "static/media/cc.svg": "/EttEnApp/static/media/cc.ed005e0a36856f26e745e70ace34af27.svg",
-    "static/media/cc-sa.svg": "/EttEnApp/static/media/cc-sa.28565e15f12fc1d5548bd01e1c6056a7.svg",
-    "static/media/cc-by.svg": "/EttEnApp/static/media/cc-by.335d8731d66ebc30edb7093b856c5a36.svg",
-    "index.html": "/EttEnApp/index.html",
-    "static/media/close.svg": "/EttEnApp/static/media/close.5cd3645cf868e38fd4b537249c2397f6.svg",
-    "main.acccdb00.css.map": "/EttEnApp/static/css/main.acccdb00.css.map",
-    "main.fbb73586.js.map": "/EttEnApp/static/js/main.fbb73586.js.map",
-    "787.0b7ea8a6.chunk.js.map": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js.map"
+    "main.css": "/static/css/main.ce8a13fd.css",
+    "main.js": "/static/js/main.3d904ec2.js",
+    "static/js/787.0b7ea8a6.chunk.js": "/static/js/787.0b7ea8a6.chunk.js",
+    "static/media/SwedenSansBold.otf": "/static/media/SwedenSansBold.662ac4185b3a9074eca6.otf",
+    "static/media/SwedenSansRegular.otf": "/static/media/SwedenSansRegular.c0a0040277179d1b6289.otf",
+    "static/media/SwedenSansBook.otf": "/static/media/SwedenSansBook.f5803b4274e1a4838112.otf",
+    "static/media/SwedenSansSemiBold.otf": "/static/media/SwedenSansSemiBold.8c212e4de1a55cf969a1.otf",
+    "static/media/SwedenSansBold.woff2": "/static/media/SwedenSansBold.a71a1aa22286ae453111.woff2",
+    "static/media/SwedenSansRegular.woff2": "/static/media/SwedenSansRegular.142417264247d4967410.woff2",
+    "static/media/SwedenSansBook.woff2": "/static/media/SwedenSansBook.44fe4e440be81972f3cf.woff2",
+    "static/media/SwedenSansSemiBold.woff2": "/static/media/SwedenSansSemiBold.d29d16bd68769e124173.woff2",
+    "static/media/ettenapp-logo.svg": "/static/media/ettenapp-logo.bd63070792d2d72f620bc784ec4ed8fc.svg",
+    "static/media/cc.svg": "/static/media/cc.ed005e0a36856f26e745e70ace34af27.svg",
+    "static/media/cc-sa.svg": "/static/media/cc-sa.28565e15f12fc1d5548bd01e1c6056a7.svg",
+    "static/media/cc-by.svg": "/static/media/cc-by.335d8731d66ebc30edb7093b856c5a36.svg",
+    "index.html": "/index.html",
+    "static/media/close.svg": "/static/media/close.5cd3645cf868e38fd4b537249c2397f6.svg",
+    "main.ce8a13fd.css.map": "/static/css/main.ce8a13fd.css.map",
+    "main.3d904ec2.js.map": "/static/js/main.3d904ec2.js.map",
+    "787.0b7ea8a6.chunk.js.map": "/static/js/787.0b7ea8a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.acccdb00.css",
-    "static/js/main.fbb73586.js"
+    "static/css/main.ce8a13fd.css",
+    "static/js/main.3d904ec2.js"
   ]
 }
