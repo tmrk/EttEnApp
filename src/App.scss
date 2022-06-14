@@ -34,8 +34,8 @@ $blue-minus-3: rgb(153, 213, 237);
 }
 
 html, body, #root {
-  height: 100dvh;
   height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -47,7 +47,7 @@ html {
 body {
   font-family: 'SwedenSans', sans-serif;
   letter-spacing: 1px;
-  background: linear-gradient(45deg, $dawn-blue, $blue);
+  background: linear-gradient(0deg, $dawn-blue, $blue);
 }
 
 a {
@@ -67,7 +67,7 @@ a {
 
 #wrapper {
   width: 620px;
-  height: 100%;
+  height: 60%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -83,6 +83,21 @@ a {
   
     #logo {
       margin-bottom: 5%;
+      position: relative;
+
+      &::after {
+        padding: 2px 5px;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        content: 'beta';
+        position: absolute;
+        top: 0;
+        right: -10px;
+        background: $yellow;
+        color: #000;
+        font-size: 0.8rem;
+        transform:rotate(30deg)
+      }
     }
   
     svg {
@@ -120,7 +135,7 @@ a {
   }
 
   & > footer {
-    margin-top: 5%;
+    margin-top: 10%;
     font-size: 0.8rem;
     align-items: flex-start;
 
@@ -151,7 +166,13 @@ a {
   }
 
   &.on {
+    height: 100%;
+    height: 100dvh;
     display: block;
+  }
+
+  &.touch.on {
+    padding-top: calc(env(safe-area-inset-top, 0) + 30px);
   }
 
   &.on #clear {
@@ -257,6 +278,10 @@ a {
   height: calc(100% - 95px);
   overflow: hidden;
   display: none;
+
+  .touch & {
+    height: calc(100% - 45px);
+  }
 
   &.noresult {
     background: rgba(255,255,255,0.9);

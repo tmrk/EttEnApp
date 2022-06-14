@@ -66,7 +66,10 @@ function App() {
   const searchFieldRef = useRef(null);
 
   return (
-    <Wrapper className={ (isMobile ? 'touch' : 'notouch') + (search ? ' on' : '') }>
+    <Wrapper className={ 
+      (isMobile ? 'touch' : 'notouch') + 
+      (search ? ' on' : '') 
+    }>
       <Header />
       <Search 
         search={search} 
