@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/EttEnApp/static/css/main.761069fa.css",
+    "main.css": "/EttEnApp/static/css/main.b4a77bf4.css",
     "main.js": "/EttEnApp/static/js/main.fbb73586.js",
     "static/js/787.0b7ea8a6.chunk.js": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js",
     "static/media/SwedenSansBold.otf": "/EttEnApp/static/media/SwedenSansBold.662ac4185b3a9074eca6.otf",
@@ -17,12 +17,12 @@
     "static/media/cc-by.svg": "/EttEnApp/static/media/cc-by.335d8731d66ebc30edb7093b856c5a36.svg",
     "index.html": "/EttEnApp/index.html",
     "static/media/close.svg": "/EttEnApp/static/media/close.5cd3645cf868e38fd4b537249c2397f6.svg",
-    "main.761069fa.css.map": "/EttEnApp/static/css/main.761069fa.css.map",
+    "main.b4a77bf4.css.map": "/EttEnApp/static/css/main.b4a77bf4.css.map",
     "main.fbb73586.js.map": "/EttEnApp/static/js/main.fbb73586.js.map",
     "787.0b7ea8a6.chunk.js.map": "/EttEnApp/static/js/787.0b7ea8a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.761069fa.css",
+    "static/css/main.b4a77bf4.css",
     "static/js/main.fbb73586.js"
   ]
 }
