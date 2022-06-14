@@ -2,7 +2,7 @@
   "name": "EttEnApp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tmrk.github.io/EttEnApp/",
+  "homepage": "https://EttEn.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
