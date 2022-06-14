@@ -8,4 +8,4 @@ The idea remains the same: to provide an easy and quick way to look up Swedish w
 
 Also, if the specified word is a noun, the app displays its gender (_**en**_ or _**ett**_) prominently at the top - which is something that learners of the Swedish language often find difficult to memorise.
 
-EttEnApp is deployed at [**EttEn.app**](https://EttEn.app)
+EttEnApp is still in beta but you can check it out at [**EttEn.app**](https://EttEn.app)
