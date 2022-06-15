@@ -1,4 +1,5 @@
 import './App.scss';
+import lexin from './assets/lexin';
 import { useState, useEffect, useRef } from 'react';
 import Search from './components/Search';
 import Filtered from './components/Filtered';
@@ -62,6 +63,44 @@ function App() {
     };
   });
 
+  // Idea via https://stackoverflow.com/a/15886205/4593394
+  const normalise = (str) => {
+    return str.replace(
+      /([ ~1234567890])|([àáâã])|([çčć])|([èéêë])|([ìíîï])|([ñ])|([òóôõø])|([ß])|([ùúûü])|([ÿ])|([æ])/g, 
+      function (str, extrachars, a, c, e, i, n, o, s, u, y, ae) {
+        if (extrachars) return '';
+        if (a) return 'a';
+        if (c) return 'c';
+        if (e) return 'e';
+        if (i) return 'i';
+        if (n) return 'n';
+        if (o) return 'o';
+        if (s) return 's';
+        if (u) return 'u';
+        if (y) return 'y';
+        if (ae) return 'ae';
+      }
+    );
+  }
+
+  const doSearch = () => {
+    const input = searchFieldRef.current.value;
+    setSearch(input);
+    const matches = [];
+    if (input) for (let i = 0; i < lexin.words.length; i++) {
+      const wordForm = lexin.words[i].form.toLowerCase();
+      if (normalise(wordForm).startsWith(normalise(input).toLowerCase())) matches.push(lexin.words[i]);
+    }
+    setFiltered(matches);
+    const firstWord = matches[0];
+    if (firstWord) {
+      setSelected(firstWord);
+      setResult(firstWord);
+      filteredRef.current.scrollTop = 0;
+    }
+    searchFieldRef.current.focus(); // doesn't work...
+  }
+
   const filteredRef = useRef(null);
   const searchFieldRef = useRef(null);
 
@@ -79,6 +118,7 @@ function App() {
         setResult={setResult}
         searchFieldRef={searchFieldRef}
         filteredRef={filteredRef}
+        doSearch={doSearch}
       />
       <Main className={ filtered.length ? '' : 'noresult' }>
         <Filtered 
@@ -92,6 +132,8 @@ function App() {
         <Result 
           result={ result } 
           setSearch={setSearch}
+          doSearch={doSearch}
+          searchFieldRef={searchFieldRef}
         />
       </Main>
       <Footer />

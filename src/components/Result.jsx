@@ -12,6 +12,8 @@ const Result = (props) => {
 				setSearch={ props.setSearch }
 				key={ index }
 				formNumber={ result.forms.length > 1 && index + 1 } // pass the form number only if there is more than one form
+				doSearch={props.doSearch}
+				searchFieldRef={props.searchFieldRef}
 			/>
 		) : ''}
 			{/* { <pre style={{marginTop: 10 + 'px', padding: 20 + 'px', color: '#888'}}>

@@ -21,13 +21,10 @@ const Pos = (props) => {
       });
 
       const handleClick = () => {
-        props.setSearch(linkedWordForm);
-        document.getElementById('word').focus();
-        document.getElementById('word').select();
-        //props.setSelected(firstWord);
-        //props.setResult(firstWord);
-        //document.getElementById('word').dispatchEvent(new Event('input', { 'bubbles': true }))
+        props.searchFieldRef.current.value = linkedWordForm;
+        props.doSearch();
       };
+      
       formattedPos = (
         <>
           <span>se </span>
@@ -111,6 +108,8 @@ const Word = (props) => {
       <Pos 
         pos={word.pos}
         setSearch={props.setSearch}
+        doSearch={props.doSearch}
+        searchFieldRef={props.searchFieldRef}
       />
 
       {word.inflection ?
